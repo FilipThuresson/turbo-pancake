@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +21,20 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+
+Route::get('/admin/dashboard', function(){
+    return view('admin.wop');
+})->name('admin-dash');
+
+Route::get('/admin/orders', function(){
+    return view('admin.wop');
+})->name('admin-orders');
+
+Route::get('/admin/products', [AdminController::class, 'products'])->name('admin-products');
+
+Route::get('/admin/customers', function(){
+    return view('admin.wop');
+})->name('admin-customers');

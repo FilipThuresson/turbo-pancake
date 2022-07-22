@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
@@ -15,5 +17,10 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.index');
+    }
+
+    public function products() {
+        $products= Product::all();
+        return view('admin.products.index', compact('products'));
     }
 }

@@ -52,7 +52,7 @@ class User extends Authenticatable
     public function users()
     {
         return $this
-            ->belongsToMany('App\User')
+            ->belongsToMany('App\Model\User')
             ->withTimestamps();
     }
 
