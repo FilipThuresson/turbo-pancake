@@ -7,11 +7,7 @@ body{
     min-width: 200px;
     width: 15vw;
 }
-.product {
-    padding: 5px;
-    max-width: 200px;
-    border: 1px solid darkgray;
-}
+
 main{
     position: absolute;
     width: 85vw;
@@ -19,8 +15,7 @@ main{
     left: max(15vw, 200px);
     padding: 100px;
 }
-#grid-wrapper {
-    display: grid;
-    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
-    gap: 10px;
+
+td a {
+    color: black;
 }

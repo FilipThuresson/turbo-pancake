@@ -9,6 +9,13 @@ class Product extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title',
+        'desc',
+        'price',
+        'trending'
+    ];
+
     public function images() {
         return $this->hasMany(ProductImage::class);
     }
