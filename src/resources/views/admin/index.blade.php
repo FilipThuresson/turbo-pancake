@@ -1,4 +1,4 @@
-@extends('layouts.admintest')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
@@ -13,7 +13,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
                     This is Admin Dashboard. You must be privileged to be here !
                 </div>
             </div>

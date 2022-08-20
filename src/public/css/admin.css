@@ -19,3 +19,71 @@ main{
 td a {
     color: black;
 }
+
+tr td {
+    vertical-align: middle;
+}
+
+tr th {
+    vertical-align: middle;
+}
+
+.thumbnail-preview {
+    width: 120px;
+    height: auto;
+}
+
+.image-wrapper {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.image-wrapper * {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+textarea {
+    resize: none;
+}
+
+.uploaded-image {
+    width: 100%;
+}
+
+/* Loading animation */
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9999;
+    transform: translate(-50%,-50%);
+  }
+.hidden {
+    display: none;
+}
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #333;
+    border-color: #333 transparent #333 transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }

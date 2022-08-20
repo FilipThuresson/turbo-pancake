@@ -18,7 +18,8 @@ class ProductImageFactory extends Factory
 
         return [
             'product_id' => Product::factory(),
-            'image_path' => Str::random(30) . '.jpg',
+            'image_path' => $this->faker->imageUrl('400', '400', 'cat', true, Str::random(4),),
+            'thumbnail' => 1,
         ];
     }
 }
