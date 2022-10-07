@@ -76,11 +76,11 @@
                         <i class="bi bi-plus-circle"></i>
                         New Product
                     </a>
-                    <a href="{{ route('admin-categories') }}" class="nav-link text-white {{ (request()->segment(2) == 'categories') ? 'active' : '' }}">
+                    <a href="{{ route('admin-categories') }}" class="nav-link text-white {{ (request()->segment(2) == 'categories' && request()->segment(3) == '') ? 'active' : '' }}">
                         <i class="bi bi-bookmark"></i>
                         Categories
                     </a>
-                    <a href="{{ route('admin-categories') }}" class="nav-link text-white {{ (request()->segment(2) == 'categories' && request()->segment(3) == 'new') ? 'active' : '' }}">
+                    <a href="{{ route('admin-categories-new') }}" class="nav-link text-white {{ (request()->segment(2) == 'categories' && request()->segment(3) == 'new') ? 'active' : '' }}">
                         <i class="bi bi-bookmark-plus"></i>
                         New categories
                     </a>

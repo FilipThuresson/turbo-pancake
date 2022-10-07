@@ -58,4 +58,9 @@ class AdminController extends Controller
         $title = "Categories";
         return view('admin.categories.index',compact('categories', 'title'));
     }
+
+    public function newCategory() {
+        $title = "New Category";
+        return view('admin.categories.new', compact('title'));
+    }
 }
