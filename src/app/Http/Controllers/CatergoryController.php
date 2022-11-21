@@ -35,7 +35,7 @@ class CatergoryController extends Controller
 
         if($saved){
             return 1;
-        }
+        }  
 
         return [
             'code' => 400,

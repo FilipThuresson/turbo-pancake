@@ -92,6 +92,13 @@
                         Customers
                     </a>
                   </li>
+                  <hr>
+                  <li>
+                    <a href="{{ route('admin-accounts') }}" class="nav-link text-white {{ Route::currentRouteNamed('admin-accounts') ? 'active' : '' }}">
+                        <i class="bi bi-person-video2"></i>
+                        Accounts
+                    </a>
+                  </li>
             </ul>
             <hr>
             <div class="dropdown">

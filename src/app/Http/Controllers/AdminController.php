@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Categories;
 use App\Models\Product;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -62,5 +64,50 @@ class AdminController extends Controller
     public function newCategory() {
         $title = "New Category";
         return view('admin.categories.new', compact('title'));
+    }
+
+    public function accounts(Request $request) {
+
+        $query = User::query();
+
+        if($request->get('search') !== null){
+            $query = $query->where('name', 'like', sprintf('%%%s%%', $request->get('search')))
+                        ->orWhere('email', 'like', sprintf('%%%s%%', $request->get('search')));
+        }
+
+        if($request->get('role') !== null) {
+            $query = $query->whereIn('id', function($subquery) use($request) {
+                $subquery->select('user_id')->from('role_user')->where('role_id', '=', $request->get('role'));
+            });
+        }
+
+        if($request->get('email_verified') == 'on') {
+            $query->where('email_verified_at', '<>', null);
+        }
+
+        if($request->get('startdate') !== null) {
+            $query->where('created_at', '>', $request->get('startdate'));
+        }
+
+        if($request->get('enddate') !== null) {
+            $query->where('created_at', '<', $request->get('enddate'));
+        }
+
+        $accounts = $query->paginate(20);
+
+
+        $return_vals = [
+            'accounts' => $accounts,
+            'roles' => Role::all(),
+            'title' => "Accounts",
+            'request' => $request
+        ];
+
+        return view('admin.accounts.index', $return_vals);
+    }
+
+    public function accounts_new() {
+        $title = "New Account";
+        return view('admin.accounts.index');
     }
 }

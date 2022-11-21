@@ -53,6 +53,12 @@ Route::get('/admin/categories/new', [AdminController::class, 'newCategory'])->na
 
 Route::post('/admin/categories/new', [CatergoryController::class, 'new'])->name('new-category');
 
+//All account related routes
+
+Route::get('/admin/accounts', [AdminController::class, 'accounts'])->name('admin-accounts');
+Route::get('/admin/accounts/new', [AdminController::class, 'accounts_new'])->name('admin-accounts-new');
+
+
 Route::get('/admin/customers', function(){
     return view('admin.wop');
 })->name('admin-customers');
