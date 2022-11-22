@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CatergoryController;
 use App\Http\Controllers\HomeController;
@@ -57,6 +58,8 @@ Route::post('/admin/categories/new', [CatergoryController::class, 'new'])->name(
 
 Route::get('/admin/accounts', [AdminController::class, 'accounts'])->name('admin-accounts');
 Route::get('/admin/accounts/new', [AdminController::class, 'accounts_new'])->name('admin-accounts-new');
+Route::post('/admin/accounts/new', [AccountController::class, 'accounts_new'])->name('admin-accounts-new-post');
+
 
 
 Route::get('/admin/customers', function(){

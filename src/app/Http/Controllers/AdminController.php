@@ -106,8 +106,23 @@ class AdminController extends Controller
         return view('admin.accounts.index', $return_vals);
     }
 
-    public function accounts_new() {
+    public function accounts_new(Request $request) {
+
+        $user = [];
+
+        if($request->get('id')) {
+            $user = User::find($request->get('id'));
+        };
+
+        $roles = Role::all();
+
         $title = "New Account";
-        return view('admin.accounts.index');
+
+        $return_vals = [
+            "title" => $title,
+            "user" => $user,
+            "roles" => $roles,
+        ];
+        return view('admin.accounts.new', $return_vals);
     }
 }

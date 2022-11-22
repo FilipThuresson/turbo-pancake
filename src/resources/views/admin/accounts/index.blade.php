@@ -87,7 +87,7 @@
                                     @endforeach
                                 </td>
                                 <td>
-                                    <i class="bi bi-pen"></i>
+                                    <a href="{{ route('admin-accounts-new') }}?id={{ $account->id }}"><i class="bi bi-pen"></i></a>
                                 </td>
                             </tr>
                         @endforeach
