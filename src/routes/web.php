@@ -58,7 +58,7 @@ Route::post('/admin/categories/new', [CatergoryController::class, 'new'])->name(
 
 Route::get('/admin/accounts', [AdminController::class, 'accounts'])->name('admin-accounts');
 Route::get('/admin/accounts/new', [AdminController::class, 'accounts_new'])->name('admin-accounts-new');
-Route::post('/admin/accounts/new', [AccountController::class, 'accounts_new'])->name('admin-accounts-new-post');
+Route::post('/admin/accounts/new', [AccountController::class, 'new'])->name('admin-accounts-new-post');
 
 
 

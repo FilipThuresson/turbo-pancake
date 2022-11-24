@@ -75,7 +75,9 @@ class AdminController extends Controller
                         ->orWhere('email', 'like', sprintf('%%%s%%', $request->get('search')));
         }
 
-        if($request->get('role') !== null) {
+        if($request->get('role') == "0" || $request->get('role') == null) {
+            $query = $query;
+        }else {
             $query = $query->whereIn('id', function($subquery) use($request) {
                 $subquery->select('user_id')->from('role_user')->where('role_id', '=', $request->get('role'));
             });

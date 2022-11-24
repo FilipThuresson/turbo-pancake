@@ -24,10 +24,10 @@
                         </div>
                         <div class="col">
                             <label><h4>Role</h4></label>
-                            <select name="roles" id="roles" class="w-100 form-control">
+                            <select name="role" id="roles" class="w-100 form-control">
                                 <option value="0">No filter</option>
                                 @foreach($roles as $role)
-                                    <option {{ $request->get('roles') == $role->id ? 'selected' : '' }} value="{{ $role->id }}">{{ ucfirst($role->description) }}</option>
+                                    <option {{ $request->get('role') == $role->id ? 'selected' : '' }} value="{{ $role->id }}">{{ ucfirst($role->description) }}</option>
                                 @endforeach
                             </select>
                         </div>

@@ -35,10 +35,9 @@
                 <div class="row mt-2">
                     <div class="col">
                         <label><h4 class="text-center">Role</h4></label>
-                        <select name="role" class="w-100 form-control">
-                            <option value="0">No role</option>
+                        <select name="role[]" class="w-100 form-control" multiple>
                             @foreach($roles as $role)
-                                <option {{ $user->hasRole($role->name) ? 'selected' : '' }} value="{{ $role->id }}">{{ ucfirst($role->description) }}</option>
+                                <option {{is_object($user) ? ($user->hasRole($role->name) ? 'selected' : '') : '' }} value="{{ $role->id }}">{{ ucfirst($role->description) }}</option>
                             @endforeach
                         </select>
                     </div>
