@@ -44,7 +44,7 @@ class AccountController extends Controller
                                     'created_at' => date('Y-m-d h:i:s'),
                                     'updated_at' => date('Y-m-d h:i:s'),
                                 ]);
-                                Session::flash('sucess', 'Saved user');
+                                Session::flash('message', 'Saved user');
                                 return redirect('/admin/accounts/');
                             }
                         }
